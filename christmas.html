@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎄 个人圣诞主页 🎄</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a472a 0%, #2d5a3f 50%, #1a472a 100%);
+            min-height: 100vh;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .snowflakes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .snowflake {
+            position: absolute;
+            color: #fff;
+            font-size: 1.5em;
+            animation: fall linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-10vh) rotate(0deg);
+            }
+            100% {
+                transform: translateY(110vh) rotate(360deg);
+            }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 3em;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .christmas-tree {
+            text-align: center;
+            font-size: 4em;
+            margin: 30px 0;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                filter: drop-shadow(0 0 10px #ffd700);
+            }
+            to {
+                filter: drop-shadow(0 0 20px #ff6b6b);
+            }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 20px 0;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h2 {
+            color: #ffd700;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        .card p {
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+
+        .wishes-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .wishes-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .wishes-list li:last-child {
+            border-bottom: none;
+        }
+
+        .wishes-list li::before {
+            content: '🎁';
+            margin-right: 15px;
+            font-size: 1.5em;
+        }
+
+        .decorations {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 3em;
+            margin: 30px 0;
+        }
+
+        .decoration {
+            animation: bounce 1s ease-in-out infinite;
+        }
+
+        .decoration:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .decoration:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .decoration:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        .decoration:nth-child(5) {
+            animation-delay: 0.8s;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .greeting {
+            font-size: 2em;
+            text-align: center;
+            color: #ff6b6b;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake" style="left: 5%; animation-duration: 10s;">❄</div>
+        <div class="snowflake" style="left: 15%; animation-duration: 12s; animation-delay: 1s;">❅</div>
+        <div class="snowflake" style="left: 25%; animation-duration: 8s; animation-delay: 2s;">❆</div>
+        <div class="snowflake" style="left: 35%; animation-duration: 11s; animation-delay: 0.5s;">❄</div>
+        <div class="snowflake" style="left: 45%; animation-duration: 9s; animation-delay: 3s;">❅</div>
+        <div class="snowflake" style="left: 55%; animation-duration: 13s; animation-delay: 1.5s;">❆</div>
+        <div class="snowflake" style="left: 65%; animation-duration: 10s; animation-delay: 2.5s;">❄</div>
+        <div class="snowflake" style="left: 75%; animation-duration: 8s; animation-delay: 0.8s;">❅</div>
+        <div class="snowflake" style="left: 85%; animation-duration: 11s; animation-delay: 1.8s;">❆</div>
+        <div class="snowflake" style="left: 95%; animation-duration: 9s; animation-delay: 3.5s;">❄</div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>🎄 圣诞快乐 🎄</h1>
+            <p class="subtitle">Merry Christmas</p>
+        </header>
+
+        <div class="christmas-tree">🎄</div>
+
+        <div class="decorations">
+            <span class="decoration">⭐</span>
+            <span class="decoration">🔔</span>
+            <span class="decoration">🎅</span>
+            <span class="decoration">🎁</span>
+            <span class="decoration">❄️</span>
+        </div>
+
+        <div class="card">
+            <h2>🎅 关于我</h2>
+            <p>
+                欢迎来到我的个人圣诞主页！在这个温馨的节日里，我想和大家分享我对圣诞节的热爱。
+                圣诞节是一个充满爱、希望和欢乐的节日，让我们一起感受这份美好！
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>🎁 我的圣诞愿望</h2>
+            <ul class="wishes-list">
+                <li>愿世界和平，人人幸福安康</li>
+                <li>愿家人朋友身体健康，快乐每一天</li>
+                <li>愿自己在新的一年里不断学习成长</li>
+                <li>愿每个人都能实现自己的梦想</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>❄️ 圣诞祝福</h2>
+            <p>
+                在这个美好的圣诞季节，愿你收获满满的快乐和幸福。愿圣诞老人带给你最美好的礼物，
+                愿新的一年充满无限可能。让我们一起珍惜身边的人，感恩生活中的每一份美好！
+            </p>
+        </div>
+
+        <p class="greeting">🌟 愿你拥有一个美好的圣诞节！🌟</p>
+
+        <footer>
+            <p>Made with ❤️ | 圣诞节 2024</p>
+            <p>🎄🎅🎁❄️⭐🔔🦌🍪🥛🎄</p>
+        </footer>
+    </div>
+</body>
+</html>
